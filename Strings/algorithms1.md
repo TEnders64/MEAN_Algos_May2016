@@ -2,7 +2,7 @@
 
 #####Notes on Strings...
   Strings are immutable.  Meaning, they cannot be changed in place like you would an array.
-  For these algorithms, you will be creating new strings and returning them, unless asked for true/false, of course.
+  For these algorithms, you will be creating new strings and returning them, unless asked for true/false or an array, of course.
 
 ##returnWords [Basic]
 Create a function called returnWords that takes in a string and returns and array of the string's individual words.
