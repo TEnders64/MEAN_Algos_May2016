@@ -122,6 +122,12 @@ For all the challenges for SLL's, include both the Node and SinglyLinkedList cla
 ##Adding Nodes
 Create an add method in the SinglyLinkedList class that adds a node to the end of the list.  All you are given is a value.  Do not worry about sorting, just add to the end of the list.
 
+###Bonus: addAtIndex
+Create an addAtIndex method that adds a node at the index given.  You are also given a value.  For example, given this list:
+(5) -> (10) -> (12)
+addAtIndex(1, 20) will produce
+(5) -> (20) -> (10) -> (12)
+
 ##Sum
 Create a sum method that returns the sum of the values in the list.
 
