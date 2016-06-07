@@ -139,3 +139,43 @@ Create a listToArray method that returns all the values of the list in an array.
 
 ##Removing Nodes (Advanced)
 Create a remove method that takes in a value.  If that value is found in the list, remove its node (do not worry about removing duplicates, just remove the first one you find).  Hmm, how would you remove a node from a list if all a list truly is, is a bunch of nodes pointing to one another?
+
+##Reverse
+Reverse a node sequence.  Given an SLL object, its .head property should point to the previously-last node, and the rest of the nodes should follow similarly from back to front. For example...
+```javascript
+node1 = new Node(4);
+node2 = new Node(3);
+node3 = new Node(2);
+node4 = new Node(1);
+
+node1.next = node2; // 4=>3
+node2.next = node3; // 4=>3=>2
+node3.next = node4; // 4=>3=>2=>1
+
+sll1 = new SLL();
+sll1.head = node1;
+sll1.reverse(); // 1=>2=>3=>4
+```
+
+##hasLoop (Advanced)
+To help with this challenge, we introduce the idea that we can have multiple runners in our linked list.  Remember how we set up a 'current' to traverse the list while preserving the head?  This is an idea of a runner.  We can certainly have multiple runners, maybe going at different "speeds", in other words,  one trailing the other by a couple nodes.
+
+Scenario: Zubin sends linked lists to Grace, but she doesn't quite trust him.  Is he trying to make her code spin infinitely?  Given a linked list, determine whether it has a loop, and return a boolean accordingly. [The linked list does not necessarily have unique values and you can not modify the nodes to have any additional information, i.e. breadcrumbs]
+```javascript
+node1 = new Node(4);
+node2 = new Node(3);
+node3 = new Node(2);
+node4 = new Node(1);
+node5 = new Node(0);
+
+node1.next = node2; // 4=>3
+node2.next = node3; // 4=>3=>2
+node3.next = node4; // 4=>3=>2=>1
+node4.next = node5; // 4=>3=>2=>1=>0
+node5.next = node3; // 4=>3=>2=>1=>0=>2
+
+sll1 = new SLL();
+sll1.head = node1;
+sll1.hasLoop(); // true
+```
+![alt text](SLL_loop.png "SLL with Loop")
