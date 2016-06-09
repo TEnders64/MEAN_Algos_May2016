@@ -41,7 +41,15 @@ function SLL(){
     else{
       var current = this.head;
       while (current.next && counter != idx - 1){
-
+        current = current.next;
+        counter++;
+      }
+      if (counter == idx - 1){
+        node.next = current.next;
+        current.next = node;
+      }
+      else{
+        current.next = node;
       }
     }
   }
@@ -145,6 +153,7 @@ sll1.head = node1;
 // console.log(sll1.average());
 // console.log(sll1.listToArray());
 // sll1.remove(1);
+// sll1.addAtIndex(2, 2.5);
 // sll1.reverse();
 // console.log(sll1.hasLoop());
 // sll1.printVals();
