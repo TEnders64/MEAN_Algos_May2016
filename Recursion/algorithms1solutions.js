@@ -108,11 +108,46 @@ var obj1 = {
 }
 // console.log(rObjKeys(obj1));
 
+//Recursive solution
 function rUneven(num){
-  if (num / 10 < 1 && num % 2 == 1){
-    return num;
-  }else if (num / 10 < 1 && num % 2 == 0){
-
+  var negative = false;
+  if (num < 0){
+    negative = true;
+    console.log('negative');
+    num = Math.abs(num);
   }
-
+  if (num < 10){
+    if (num % 2 == 1){
+      return num;
+    }
+    return 0;
+  }else{
+    var digit = num % 10;
+    if (digit % 2 == 1){
+      return digit + rUneven(Math.floor(num / 10)) * 10;
+    }
+    return rUneven(Math.floor(num / 10));
+  }
 }
+console.log(rUneven(-20390));
+
+//Iterative solution (not optimized)
+function uneven(num){
+  var sum = 0;
+  var count = 0;
+  while (num){
+    var digit = num % 10;
+    console.log('digit: ', digit);
+    if ( digit % 2 == 1 || digit % 2 == -1){
+      console.log('found an odd digit', digit);
+      sum += digit * (Math.pow(10,count));
+      count++;
+      console.log('count: ', count);
+      console.log('sum: ', sum);
+    }
+    num -= digit;
+    num /= 10;
+    console.log('num: ', num);
+  }
+}
+// console.log(uneven(-1845));
