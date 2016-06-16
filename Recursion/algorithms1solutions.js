@@ -110,10 +110,9 @@ var obj1 = {
 
 //Recursive solution
 function rUneven(num){
-  var negative = false;
+  var negative = 1;
   if (num < 0){
-    negative = true;
-    console.log('negative');
+    negative = -1;
     num = Math.abs(num);
   }
   if (num < 10){
@@ -124,9 +123,9 @@ function rUneven(num){
   }else{
     var digit = num % 10;
     if (digit % 2 == 1){
-      return digit + rUneven(Math.floor(num / 10)) * 10;
+      return (digit + rUneven(Math.floor(num / 10)) * 10) * negative;
     }
-    return rUneven(Math.floor(num / 10));
+    return rUneven(Math.floor(num / 10)) * negative;
   }
 }
 console.log(rUneven(-20390));
