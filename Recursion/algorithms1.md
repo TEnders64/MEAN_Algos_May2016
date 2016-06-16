@@ -17,7 +17,7 @@ Given first node of a singly linked list, create a recursive function that retur
 Given a sorted array and a value, recursively determine whether value is found within array. rBinarySearch([1,3,5,6],4) = false; rBinarySearch([4,5,6,8,12],5) = true.
 
 #Object Keys
-Given a Javascript object, return all the keys from that object in an array, whether it has embedded objects or not.  rObjKeys({name: 'Brandon', language: 'Javascript', {address: '1212 Main St', city: 'Fremont', state: 'OK'}, age: 25}) => ['name', 'language', 'address', 'city', 'state', 'age']
+Given a Javascript object, return all the keys from that object in an array, whether it has embedded objects or not.  rObjKeys({name: 'Brandon', language: 'Javascript', address: {street: '1212 Main St', city: 'Fremont', state: 'OK'}, age: 25}) => ['name', 'language', 'address', 'street', 'city', 'state', 'age']
 
 #Uneven Digits
 Cami doesn’t know why, but she’s just in an odd mood today. Given an integer, recursively return the integer formed by stripping out all even digits in original. Solve without loops. uneven(-1845) = -15; uneven(79) = 79; uneven(20) = 0; uneven(-92) = -9.
